@@ -1,0 +1,28 @@
+{
+  "gateway": {
+    "port": 3000,
+    "bind": "loopback",
+    "mode": "local",
+    "auth": {
+      "mode": "trusted-proxy",
+      "trustedProxy": {
+        "userHeader": "X-Forwarded-User",
+        "allowLoopback": true
+      }
+    },
+    "trustedProxies": ["127.0.0.1"],
+    "controlUi": {
+      "enabled": true,
+      "basePath": "/molt"
+    }
+  },
+  "agents": {
+    "defaults": {
+      "models": {
+        "google/gemini-2.5-pro": {
+          "alias": "default"
+        }
+      }
+    }
+  }
+}
